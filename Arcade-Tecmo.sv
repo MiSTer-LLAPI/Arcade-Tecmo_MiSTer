@@ -401,18 +401,18 @@ LLAPI llapi2
 //Controller specific mapping based on type. More info here : https://docs.google.com/document/d/12XpxrmKYx_jgfEPyw-O2zex1kTQZZ-NSBdLO2RQPRzM/edit
 //llapi_Buttons [id] are HID [id - 1]
 
-//  hps_io #(.CONF_STR(CONF_STR)) "J1,B0,B1,B2,Start,Coin,Pause;",
+//  hps_io #(.CONF_STR(CONF_STR)) "J1,B0,B1,B2,Start P1, Start P2 ,Coin,Pause;",
 
 
 //Port 1 mapping
 
-wire [9:0] joy_ll_a;
+wire [10:0] joy_ll_a;
 always_comb begin
 	// button layout for 6 button controllers
 	if (llapi_type == 20 || llapi_type == 21 || llapi_type == 8 || llapi_type == 3 || llapi_type == 11) begin
 		joy_ll_a = {
 			1'b0, // Pause
-			llapi_buttons[4], llapi_buttons[5], // Coin, Start
+			llapi_buttons[4], 1'b0, llapi_buttons[5], // Coin, Start P2, Start P1
 			llapi_buttons[7], llapi_buttons[1], llapi_buttons[0], // B2, B1, B0
 			llapi_buttons[27], llapi_buttons[26], llapi_buttons[25], llapi_buttons[24] // d-pad
 		};
@@ -420,14 +420,14 @@ always_comb begin
 	end else if (llapi_type == 54) begin
 		joy_ll_a = {
 			1'b0, // Pause
-			llapi_buttons[4], llapi_buttons[5], // Coin, Start
+			llapi_buttons[4], 1'b0, llapi_buttons[5], // Coin, Start P2, Start P1
 			llapi_buttons[1], llapi_buttons[0], llapi_buttons[7], // B2, B1, B0
 			llapi_buttons[27], llapi_buttons[26], llapi_buttons[25], llapi_buttons[24] // d-pad
 		};
 	end else begin
 		joy_ll_a = {
 			1'b0, // Pause
-			llapi_buttons[4], llapi_buttons[5], // Coin, Start
+			llapi_buttons[4], 1'b0, llapi_buttons[5], // Coin, Start P2, Start P1
 			llapi_buttons[1], llapi_buttons[0], llapi_buttons[2], // B2, B1, B0
 			llapi_buttons[27], llapi_buttons[26], llapi_buttons[25], llapi_buttons[24] // d-pad
 		};
@@ -437,13 +437,13 @@ end
 
 //Port 2 mapping
 
-wire [9:0] joy_ll_b;
+wire [10:0] joy_ll_b;
 always_comb begin
 	// button layout for 6 button controllers
 	if (llapi_type2 == 20 || llapi_type2 == 21 || llapi_type2 == 8 || llapi_type2 == 3 || llapi_type2 == 11) begin
 		joy_ll_b = {
 			1'b0, // Pause
-			llapi_buttons2[4], llapi_buttons2[5], // Coin, Start
+			llapi_buttons2[4], llapi_buttons2[5], 1'b0, // Coin, Start P2, Start P1
 			llapi_buttons2[7], llapi_buttons2[1], llapi_buttons2[0], // B2, B1, B0
 			llapi_buttons2[27], llapi_buttons2[26], llapi_buttons2[25], llapi_buttons2[24] // d-pad
 		};
@@ -451,14 +451,14 @@ always_comb begin
 	end else if (llapi_type2 == 54) begin
 		joy_ll_b = {
 			1'b0, // Pause
-			llapi_buttons2[4], llapi_buttons2[5], // Coin, Start
+			llapi_buttons2[4], llapi_buttons2[5],1'b0, // Coin, Start P2, Start P1
 			llapi_buttons2[1], llapi_buttons2[0], llapi_buttons2[7], // B2, B1, B0
 			llapi_buttons2[27], llapi_buttons2[26], llapi_buttons2[25], llapi_buttons2[24] // d-pad
 		};
 	end else begin
 		joy_ll_b = {
 			1'b0, // Pause
-			llapi_buttons2[4], llapi_buttons2[5], // Coin, Start
+			llapi_buttons2[4], llapi_buttons2[5], 1'b0, // Coin, Start P2, Start P1
 			llapi_buttons2[1], llapi_buttons2[0], llapi_buttons2[2], // B2, B1, B0
 			llapi_buttons2[27], llapi_buttons2[26], llapi_buttons2[25], llapi_buttons2[24] // d-pad
 		};
