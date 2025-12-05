@@ -428,7 +428,7 @@ always_comb begin
 		joy_ll_a = {
 			1'b0, // Pause
 			llapi_buttons[4], 1'b0, llapi_buttons[5], // Coin, Start P2, Start P1
-			llapi_buttons[1], llapi_buttons[0], llapi_buttons[2], // B2, B1, B0
+			llapi_buttons[2], llapi_buttons[1], llapi_buttons[0], // B2, B1, B0
 			llapi_buttons[27], llapi_buttons[26], llapi_buttons[25], llapi_buttons[24] // d-pad
 		};
 	end
@@ -459,7 +459,7 @@ always_comb begin
 		joy_ll_b = {
 			1'b0, // Pause
 			llapi_buttons2[4], llapi_buttons2[5], 1'b0, // Coin, Start P2, Start P1
-			llapi_buttons2[1], llapi_buttons2[0], llapi_buttons2[2], // B2, B1, B0
+			llapi_buttons2[2], llapi_buttons2[1], llapi_buttons2[0], // B2, B1, B0
 			llapi_buttons2[27], llapi_buttons2[26], llapi_buttons2[25], llapi_buttons2[24] // d-pad
 		};
 	end
