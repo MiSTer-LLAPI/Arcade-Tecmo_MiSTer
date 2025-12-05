@@ -1,8 +1,8 @@
 # LLAPI Note
 
-Place the rbf core file in a folder named _LLAPI/cores/
-Place the MRAs files in _LLAPI/_Arcade/
-Play !
+1. Place the rbf core file in a folder named _LLAPI/cores/
+2. Place the MRAs files in _LLAPI/_Arcade/
+3. Play !
 
 # Tecmo
 
