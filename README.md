@@ -1,3 +1,9 @@
+# LLAPI Note
+
+1. Place the rbf core file in a folder named _LLAPI/cores/
+2. Place the MRAs files in _LLAPI/_Arcade/
+3. Play !
+
 # Tecmo
 
 Tecmo was a Japanese video game company founded in 1967, who like many other game companies of the era, had their roots outside the amusement business. In Tecmo's case, they were originally a supplier of cleaning equipment.
